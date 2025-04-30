@@ -1,20 +1,20 @@
 import random
 
-foo = int(input('Enter width of space: '))
-bar = int(input('Enter height of space: '))
-baz = 0
-qux = 0
-quux = []
-while baz != foo - 1 or qux != bar - 1:
+width = int(input('Enter width of space: '))
+height = int(input('Enter height of space: '))
+x = 0
+y = 0
+path = []
+while x != width - 1 or y != height - 1:
     choice = random.randint(0, 3)
-    if choice == 0 and qux < bar - 1:
-        qux += 1
-    elif choice == 1 and baz < foo - 1:
-        baz += 1
-    elif choice == 2 and qux > 0:
-        qux -= 1
-    elif choice == 3 and baz > 0:
-        baz -= 1
-    quux.append('(' + str(baz) + ',' + str(qux) + ')')
-print('Drunkard path: ' + str(quux))
-print('Final position: (' + str(baz) + ',' + str(qux) + ').')
+    if choice == 0 and y < height - 1:
+        y += 1
+    elif choice == 1 and x < width - 1:
+        x += 1
+    elif choice == 2 and y > 0:
+        y -= 1
+    elif choice == 3 and x > 0:
+        x -= 1
+    path.append('(' + str(x) + ',' + str(y) + ')')
+print('Drunkard path: ' + str(path))
+print('Final position: (' + str(x) + ',' + str(y) + ').')
